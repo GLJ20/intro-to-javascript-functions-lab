@@ -38,7 +38,7 @@ const isAdult = (number) => {
 }
 
 
-console.log('Exercise 2 Result:', isAdult(21));
+console.log('Exercise 2 Result:', isAdult(16));
 
 /*
 Exercise 3: isCharAVowel()
@@ -55,17 +55,15 @@ Complete the exercise in the space below:
 
 const isCharAVowel = (vow) => {
     const vows = ["a", "e", "i", "o", "u"];
-    for(let i=0; i <= vows.length; i++){
+    for(let i=0; i < vows.length; i++){
         if (vow === vows[i]){
             return true;
-        }else{
-            return false;
-        }
-    }
-}
+        } 
+    }return false;
+};
 
 
-console.log('Exercise 3 Result:', isCharAVowel("a"));
+console.log('Exercise 3 Result:', isCharAVowel("b"));
 
 /*
 Exercise 4: generateEmail()
@@ -117,13 +115,7 @@ Complete the exercise in the space below:
 */
 
 const maxOfThree = (n1, n2, n3) => {
-    if (n1 > n2 && n1 > n3){
-        return n1;
-    }else if(n2 > n1 && n2 > n3){
-        return n2;
-    }else if(n3 > n1 && n3 > n2){
-        return n3;
-    }
+    return Math.max(n1, n2, n3)
 }
 
 
@@ -166,7 +158,7 @@ Complete the exercise in the space below:
 
 const convertTemperature = (temp, scale) => {
     if ( scale === "C"){
-        const conv = (temp * 9/5) +32;
+        const conv = (temp * 9/5) + 32;
         return `${conv} (Fahrenheit)`;
     }else if (scale === "F"){
         const conv = (temp - 32) * 5/9;
@@ -199,7 +191,11 @@ const basicCalculator = (n1, n2, operation) => {
     }else if(operation === "multiply"){
         return n1 * n2;
     }else if (operation === "divide"){
-        return n1/n2;
+        if(n2 === 0){
+            return "Error: Division by zero";
+        }else{
+            return n1/n2;
+        }
     }
 }
 
